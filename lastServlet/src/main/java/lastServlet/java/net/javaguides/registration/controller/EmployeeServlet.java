@@ -6,18 +6,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lastServlet.java.net.javaguides.registration.model.Employee;
+
 import java.util.*;
-//import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-//import org.apache.poi.ss.usermodel.Cell;
-//import org.apache.poi.ss.usermodel.Row;
-//import org.apache.poi.ss.usermodel.Sheet;
-//import org.apache.poi.ss.usermodel.Workbook;
 
 /**
  * Servlet implementation class EmployeeServlet
@@ -42,6 +40,10 @@ public class EmployeeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("C:\\Users\\wchen\\git\\lastServletRepo\\lastServlet\\src\\main\\webapp\\RegisterEmployee.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/RegisterEmployee.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -56,14 +58,27 @@ public class EmployeeServlet extends HttpServlet {
 		out.println("You have successfully registered");
 
 		System.out.println("this is working");
-
+		
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String emailAddress = request.getParameter("emailAddress");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		
+		Employee employee = new Employee();
+		employee.setFirstName(firstName);
+		employee.setLastName(lastName);
+		employee.setEmailAddress(emailAddress);
+		employee.setUserName(username);
+		employee.setPassWord(password);
 //
-//		writeFile.writeFunction(username, password);
-//		int sizeOfFile = readFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+		WriteFile.writeFunction(username, password);
+		int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
 //		exportFile.exportFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt", sizeOfFile);
-		doGet(request, response);
+		
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("C:\\Users\\wchen\\git\\lastServletRepo\\lastServlet\\src\\main\\webapp\\EmployeeSuccessfullyRegistered.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
+		dispatcher.forward(request, response);
 	}
 
 
