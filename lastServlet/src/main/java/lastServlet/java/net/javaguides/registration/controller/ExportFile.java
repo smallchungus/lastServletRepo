@@ -1,55 +1,101 @@
 package lastServlet.java.net.javaguides.registration.controller;
 
 import java.io.*;
+import java.util.Map;
 import java.util.Scanner;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import java.util.Set;
+import java.util.TreeMap;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileWriter;
 
 public class ExportFile {
-
-	public static void exportFunction(String fileToBeRead, int size) throws FileNotFoundException, IOException {
-
-		Workbook wb = new HSSFWorkbook();
-		FileOutputStream fileOut = new FileOutputStream("EmployeeLoginInformation.xls");
-		int[][] loginInformation = new int[size / 2][2];
-		int count = 0;
-
-		Sheet sheet = wb.createSheet("Login Information");
-
-		File myObj = new File(fileToBeRead);
-		Scanner myReader = new Scanner(myObj);
-
-		Row[] row = new Row[size / 2];
-		Cell[][] cell = new Cell[row.length][size/2+1];
-
-		for (int i = 0; i < size / 2 +1; i++) {
-			row[i] = sheet.createRow[i];
-			cell[i] = new Cell[size / 2];
-
-			for (int j = 0; j < 2; j++) {
-				String data = myReader.nextLine();
-				cell[i][j] = row[i].createCell(j);
-				cell[i][j].setCellValue(data);
-				int rowIndex = i;
-				int columnIndex = j;
-				System.out.println(
-						"Given cell is created at i changed something " + "(" + rowIndex + "," + columnIndex + ")");
-			}
-		}
-
-		// Writing the content to Workbook
-		wb.write(fileOut);
-
-		// Printing the row and column index of cell created
-		wb.close();
-		System.out.println("File exported successfully");
-
-	}
+    // Main driver method
+    public static void main(String[] args)
+    {
+  
+        // Blank workbook
+        XSSFWorkbook workbook = new XSSFWorkbook();
+  
+        // Creating a blank Excel sheet
+        XSSFSheet sheet
+            = workbook.createSheet("student Details");
+  
+        // Creating an empty TreeMap of string and Object][]
+        // type
+        Map<String, Object[]> data
+            = new TreeMap<String, Object[]>();
+  
+        // Writing data to Object[]
+        // using put() method
+        data.put("1",
+                 new Object[] { "ID", "NAME", "LASTNAME" });
+        data.put("2",
+                 new Object[] { 1, "Pankaj", "Kumar" });
+        data.put("3",
+                 new Object[] { 2, "Prakashni", "Yadav" });
+        data.put("4", new Object[] { 3, "Ayan", "Mondal" });
+        data.put("5", new Object[] { 4, "Virat", "kohli" });
+  
+        // Iterating over data and writing it to sheet
+        Set<String> keyset = data.keySet();
+  
+        int rownum = 0;
+  
+        for (String key : keyset) {
+  
+            // Creating a new row in the sheet
+            Row row = sheet.createRow(rownum++);
+  
+            Object[] objArr = data.get(key);
+  
+            int cellnum = 0;
+  
+            for (Object obj : objArr) {
+  
+                // This line creates a cell in the next
+                //  column of that row
+                Cell cell = row.createCell(cellnum++);
+  
+                if (obj instanceof String)
+                    cell.setCellValue((String)obj);
+  
+                else if (obj instanceof Integer)
+                    cell.setCellValue((Integer)obj);
+            }
+        }
+  
+        // Try block to check for exceptions
+        try {
+  
+            // Writing the workbook
+            FileOutputStream out = new FileOutputStream(
+                new File("gfgcontribute.xlsx"));
+            workbook.write(out);
+  
+            // Closing file output connections
+            out.close();
+  
+            // Console message for successful execution of
+            // program
+            System.out.println(
+                "gfgcontribute.xlsx written successfully on disk.");
+        }
+  
+        // Catch block to handle exceptions
+        catch (Exception e) {
+  
+            // Display exceptions along with line number
+            // using printStackTrace() method
+            e.printStackTrace();
+        }
+    }
 }
+
