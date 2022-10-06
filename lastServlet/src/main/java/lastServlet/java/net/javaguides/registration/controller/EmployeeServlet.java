@@ -40,8 +40,9 @@ public class EmployeeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("C:\\Users\\wchen\\git\\lastServletRepo\\lastServlet\\src\\main\\webapp\\RegisterEmployee.jsp");
+
+		// RequestDispatcher dispatcher =
+		// request.getRequestDispatcher("C:\\Users\\wchen\\git\\lastServletRepo\\lastServlet\\src\\main\\webapp\\RegisterEmployee.jsp");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/RegisterEmployee.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -58,29 +59,37 @@ public class EmployeeServlet extends HttpServlet {
 		out.println("You have successfully registered");
 
 		System.out.println("this is working");
-		
+
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String emailAddress = request.getParameter("emailAddress");
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String username = request.getParameter("userName");
+		String password = request.getParameter("passWord");
 		
+//		System.out.println("firstname " + firstName + " ");
+//		System.out.println("last name " + lastName + " ");
+//		System.out.println("email " + emailAddress + " ");
+//		System.out.println("username " + username + " ");
+//		System.out.println("password " + password + " ");
+
 		Employee employee = new Employee();
 		employee.setFirstName(firstName);
 		employee.setLastName(lastName);
 		employee.setEmailAddress(emailAddress);
 		employee.setUserName(username);
 		employee.setPassWord(password);
-//
-		WriteFile.writeFunction(username, password);
+		
+//		System.out.println("firstname " + employee.getFirstName() + " ");
+//		System.out.println("last name " + employee.getLastName() + " ");
+//		System.out.println("email " + employee.getEmailAddress() + " ");
+//		System.out.println("username " + employee.getUserName() + " ");
+//		System.out.println("password " + employee.getPassWord() + " ");
+		WriteFile.writeFunction(firstName, lastName, emailAddress, username, password);
 		int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
 //		exportFile.exportFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt", sizeOfFile);
-		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("C:\\Users\\wchen\\git\\lastServletRepo\\lastServlet\\src\\main\\webapp\\EmployeeSuccessfullyRegistered.jsp");
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
 		dispatcher.forward(request, response);
 	}
-
-
 
 }
