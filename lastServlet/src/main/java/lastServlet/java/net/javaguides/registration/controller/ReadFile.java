@@ -37,6 +37,5 @@ public class ReadFile {
         ExportFile.exportFunction(newString);
         return i;
 		
-
 	}
 }
