@@ -58,7 +58,7 @@ public class EmployeeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("You have successfully registered");
 
-		System.out.println("this is working");
+		
 
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -84,6 +84,7 @@ public class EmployeeServlet extends HttpServlet {
 //		System.out.println("email " + employee.getEmailAddress() + " ");
 //		System.out.println("username " + employee.getUserName() + " ");
 //		System.out.println("password " + employee.getPassWord() + " ");
+		System.out.println("Employee Servlet and Employee Object is made is successfully called");
 		WriteFile.writeFunction(firstName, lastName, emailAddress, username, password);
 		int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
 //		exportFile.exportFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt", sizeOfFile);
