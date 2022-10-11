@@ -28,7 +28,7 @@ public class ReadFile {
             String[] splittedRow = reader.readLine().split(" "); // split using the space character
             for(int j = 0; j < 5; j++) {
                 newString[i][j] = splittedRow[j];
-                System.out.println(splittedRow[j]);
+                //System.out.println(splittedRow[j]);
             }
         }
         reader.close();
