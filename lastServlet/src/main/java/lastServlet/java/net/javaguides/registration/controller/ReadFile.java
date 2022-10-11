@@ -34,7 +34,7 @@ public class ReadFile {
         reader.close();
         //ExportFile.exportFunction(inputFileName, newString);
         //ExportFile.exportFunction();
-        ExportFile.exportFunction();
+        ExportFile.exportFunction(newString);
         return i;
 		
 
