@@ -12,7 +12,7 @@ import java.io.StringReader;
 
 public class ReadFile {
 
-	public static int readFunction(String inputFileName) throws IOException{
+	public static int readFunction(String inputFileName) throws Exception{
 	    
 		File file = new File(inputFileName);
 		BufferedReader reader = new BufferedReader(new FileReader(file));

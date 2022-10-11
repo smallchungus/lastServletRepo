@@ -86,7 +86,12 @@ public class EmployeeServlet extends HttpServlet {
 //		System.out.println("password " + employee.getPassWord() + " ");
 		System.out.println("Employee Servlet and Employee Object is made is successfully called");
 		WriteFile.writeFunction(firstName, lastName, emailAddress, username, password);
-		int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+		try {
+			int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		exportFile.exportFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt", sizeOfFile);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
