@@ -58,19 +58,11 @@ public class EmployeeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("You have successfully registered");
 
-		
-
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String emailAddress = request.getParameter("emailAddress");
 		String username = request.getParameter("userName");
 		String password = request.getParameter("passWord");
-		
-//		System.out.println("firstname " + firstName + " ");
-//		System.out.println("last name " + lastName + " ");
-//		System.out.println("email " + emailAddress + " ");
-//		System.out.println("username " + username + " ");
-//		System.out.println("password " + password + " ");
 
 		Employee employee = new Employee();
 		employee.setFirstName(firstName);
@@ -78,24 +70,58 @@ public class EmployeeServlet extends HttpServlet {
 		employee.setEmailAddress(emailAddress);
 		employee.setUserName(username);
 		employee.setPassWord(password);
-		
-//		System.out.println("firstname " + employee.getFirstName() + " ");
-//		System.out.println("last name " + employee.getLastName() + " ");
-//		System.out.println("email " + employee.getEmailAddress() + " ");
-//		System.out.println("username " + employee.getUserName() + " ");
-//		System.out.println("password " + employee.getPassWord() + " ");
+
 		System.out.println("Employee Servlet and Employee Object is made is successfully called");
-		WriteFile.writeFunction(firstName, lastName, emailAddress, username, password);
+
+		String[][] data = null;
 		try {
-			int sizeOfFile = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
-		} catch (Exception e) {
+			data = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
+
+		// this searches the file currently if there is the same UserName and password.
+		if (SearchFile.SearchTextFile(data, username, emailAddress) == true) {
+			System.out.println("The search was conducted successfully");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
+			dispatcher.forward(request, response);
+		}
+		// if the UserName or EmailAddress is not in the searched files then we can
+		// continue
+		else {
+			
+			WriteFile.writeFunction(firstName, lastName, emailAddress, username, password);
+			try {
+				ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String[][] updatedData = null;
+			try {
+				updatedData = ReadFile.readFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt");
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 //		exportFile.exportFunction("C:\\Users\\wchen\\eclipse\\jee-2022-06\\eclipse\\fileNameNew.txt", sizeOfFile);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
-		dispatcher.forward(request, response);
+			try {
+				ExportFile.exportFunction(updatedData);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/EmployeeSuccessfullyRegistered.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
-
 }

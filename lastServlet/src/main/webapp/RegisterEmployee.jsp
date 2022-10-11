@@ -36,7 +36,7 @@
 	<input type="submit" value="Register" />
 	</form>
 	
-	<form action ="<%= request.getContextPath() %>/searchThis" method="POST">
+	<form action ="<%= request.getContextPath() %>/SearchServletHere" method="POST">
 		<input type="text" name="search"><br />
 		<input type="submit" value="searchThis" /> 
 	</form>

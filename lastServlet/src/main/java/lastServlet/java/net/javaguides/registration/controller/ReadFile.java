@@ -12,7 +12,7 @@ import java.io.StringReader;
 
 public class ReadFile {
 
-	public static int readFunction(String inputFileName) throws Exception{
+	public static String[][] readFunction(String inputFileName) throws Exception{
 	    
 		File file = new File(inputFileName);
 		BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -31,11 +31,12 @@ public class ReadFile {
                 //System.out.println(splittedRow[j]);
             }
         }
+        
         reader.close();
         //ExportFile.exportFunction(inputFileName, newString);
         //ExportFile.exportFunction();
-        ExportFile.exportFunction(newString);
-        return i;
+//        ExportFile.exportFunction(newString);
+        return newString;
 		
 	}
 }

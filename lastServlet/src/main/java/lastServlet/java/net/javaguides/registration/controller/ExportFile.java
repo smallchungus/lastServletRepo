@@ -70,7 +70,7 @@ public class ExportFile {
 				if (j != 4)
 					cell[i][j].setCellValue(data[i][j]);
 				else { 
-					System.out.println(data[i][j]);
+//					System.out.println(data[i][j]);
 					cell[i][j].setCellValue(EncryptString.Encrypt(data[i][j]));
 				}
 			}
