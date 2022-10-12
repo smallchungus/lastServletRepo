@@ -1,9 +1,7 @@
 package lastServlet.java.net.javaguides.registration.controller;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import lastServlet.java.net.javaguides.registration.model.Employee;
 
-import java.util.*;
 
 /**
  * Servlet implementation class EmployeeServlet

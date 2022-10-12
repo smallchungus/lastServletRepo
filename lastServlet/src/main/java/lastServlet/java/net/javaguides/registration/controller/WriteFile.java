@@ -1,5 +1,4 @@
 package lastServlet.java.net.javaguides.registration.controller;
-import lastServlet.java.net.javaguides.registration.model.Employee;
 
 import java.io.FileWriter;
 
@@ -10,7 +9,7 @@ public class WriteFile {
 		
 		
 		FileWriter myWriter = new FileWriter("fileNameNew.txt", true);
-		Employee employee = new Employee();
+//		Employee employee = new Employee();
 		
 //		String firstName = employee.getFirstName();
 //		String lastName = employee.getLastName();

@@ -28,7 +28,7 @@ public class EncryptString {
 		byte[] encrypted = cipher.doFinal(toBeEncrypted.getBytes());
 //		System.out.println(new String(encrypted));
 		cipher.init(Cipher.DECRYPT_MODE, aesKey);
-		String decrypted = new String(cipher.doFinal(encrypted));
+//		String decrypted = new String(cipher.doFinal(encrypted));
 //		System.err.println(decrypted);
 
 		return new String(encrypted);
