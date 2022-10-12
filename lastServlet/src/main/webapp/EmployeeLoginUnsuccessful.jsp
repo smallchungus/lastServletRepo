@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>You have successfully Registered!</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>You have successfully registered congrats!!!!</h1>
+<h1>Login unsuccessful.</h1>
+
 <form action ="<%= request.getContextPath() %>/register" method="POST">
-<input type="button" value="login" onclick="window.location='EmployeeLogin.jsp" >
+<input type="button" value="register" onclick="window.location='RegisterEmployee.jsp" >
 </form>
+
 
 </body>
 </html>
