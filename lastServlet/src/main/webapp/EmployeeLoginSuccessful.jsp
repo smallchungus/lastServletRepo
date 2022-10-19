@@ -12,7 +12,7 @@ Cookie cookie = null;
 <title>Insert title here</title>
 </head>
 <body>
-		<div id="header_wrapper">
+	<div id="header_wrapper">
 		<div id="header">
 			<li id="sitename"><a href="http://smallchungusBlueBook.com">smallchungusBlueBook.com</a></li>
 				<form action="<%=request.getContextPath()%>/register" method="POST">
@@ -22,7 +22,7 @@ Cookie cookie = null;
 				<!-- <li><input type="button" value="register" onclick="window.location='RegisterEmployee.jsp'"></li>  -->
 				</form>
 		</div>
-	</div>
+ 	</div>
 	
 
 	<table align="center" cellpadding="1" cellspacing="1" border="1"
@@ -34,8 +34,10 @@ Cookie cookie = null;
 			String cookieName = "";
 			String cookieValue = "";
 			for (int i = 0; i < cookieArray.length; i++) {
+				out.println("cookieName is " + cookieArray[i].getName() + " ");
+				out.println("cookieValue is " + cookieArray[i].getValue() + "<BR>");
 				cookieName = cookieArray[i].getName();
-				cookieValue = cookieArray[i].getValue();
+				cookieName = cookieArray[i].getName();
 			%>
 			<td><%=cookieName%></td>
 			<td><%=cookieValue%></td>
