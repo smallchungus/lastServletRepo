@@ -26,12 +26,9 @@
 			<li id="sitename"><a href="http://smallchungusBlueBook.com">smallchungusBlueBook.com</a></li>
 				<form action="<%=request.getContextPath()%>/register" method="POST">
 					<li>Email or Phone<br> <input type="text" name="username" /></li>
-					<li>Password<br> <input type="password" name="password" /><br>
-						<a href="">Forgotton account?</a></li>
+					<li>Password<br> <input type="password" name="password" /><br><a href="">Forgotten account?</a></li>
 					<li><input type="submit" value="login" name="login" /></li> 
-					<li><input
-						type="button" value="register"
-						onclick="window.location='RegisterEmployee.jsp'"></li>
+				<li><input type="button" value="register" onclick="window.location='RegisterEmployee.jsp'"></li> 
 				</form>
 		</div>
 	</div>
@@ -50,12 +47,9 @@
 		<div id="div2">
 			<h1>Create an account</h1>
 			<p>It's free and always will be.</p>
-			<li><input type="text" placeholder="First Name" id="firstname">
-			<input type="text" placeholder="Last Name" id="surname"></li>
-			<li><input type="text"
-				placeholder="Mobile number or email address"></li>
-			<li><input type="text"
-				placeholder="Re-enter mobile number or email address"></li>
+			<li><input type="text" placeholder="First Name" id="firstname"><input type="text" placeholder="Surname" id="surname"></li>
+			<li><input type="text" placeholder="Mobile number or email address"></li>
+			<li><input type="text" placeholder="Re-enter mobile number or email address"></li>
 			<li><input type="password" placeholder="New password"></li>
 			<p>Birthday</p>
 			<li><select><option>Day</option></select> <select><option>Month</option></select>
@@ -90,8 +84,6 @@
 				href="">About</a><a href="">Create Advert</a><a href="">Create
 				Page</a><a href="">Developers</a><a href="">Careers</a><a href="">Privacy</a><a
 				href="">Cookies</a><a href="">Ads</a><a href="">Terms</a><a href="">Help</a>
-			<p>
-				Design By TalkersCode.com</a>
 		</div>
 
 	</div>
