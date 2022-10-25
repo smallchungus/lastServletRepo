@@ -25,5 +25,13 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/poi-ooxml-lite-5.2.3.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/SparseBitSet-1.2.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/xmlbeans-5.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wchen/Downloads/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib/javafx-swt.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
