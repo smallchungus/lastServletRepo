@@ -2,8 +2,6 @@ package lastServlet.java.net.javaguides.registration.controller;
 
 
 import java.io.*;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 import org.apache.poi.poifs.filesystem.*;
 //import org.apache.poi.poifs.filesystem.POIFSFileSystem;
@@ -15,10 +13,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExportFile {
-	// Main driver method
+
 	public static void exportFunction(String[][] data) throws FileNotFoundException, IOException, Exception {
-		// public static void main(String[] args){
-		// Create new workbook and tab
 
 		POIFSFileSystem fs = new POIFSFileSystem();
 
@@ -81,5 +77,82 @@ public class ExportFile {
 		  
 		System.out.println("File exported successfully");
 	}
+	public static void exportFunction(int[][] data) throws FileNotFoundException, IOException, Exception {
+		
+		POIFSFileSystem fs = new POIFSFileSystem();
+		
+		XSSFWorkbook wb = new XSSFWorkbook();
+		XSSFSheet sheet = wb.createSheet("Number of Orders Per Hour");
+		
+		
+		Row[] row = new Row[data.length];
+		Cell[][] cell = new Cell[row.length][];
+		
+		String[][] headers = new String[1][2];
+		headers[0][0] = "Number of Orders";
+		headers[0][1] = "Time";
+		
+		for ( int i =0; i < headers.length; i ++ ) 
+		{
+			row[i] = sheet.createRow(i);
+			cell[i] = new Cell[headers[i].length];
+			for ( int j = 0; j < headers[0].length; j++)
+			{
+				cell[i][j] = row[i].createCell(j);
+				cell[i][j].setCellValue(headers[i][j]);
+			}
+		}
+		
+		
+		for ( int i = 1; i < row.length; i ++ ) 
+		{
+			row[i] = sheet.createRow(i);
+			cell[i] = new Cell[data[i].length];
+			
+			for ( int j = 0; j < cell[i].length; j ++ ) 
+			{
+				cell[i][j] = row[i].createCell(j);
+				cell[i][j].setCellValue(data[i][j]);
+
+			}
+		}
+
+		  
+		  OutputStream os = new FileOutputStream("OrdersPerHour.xlsx");
+		  fs.writeFilesystem(os);
+		  os.close();
+		  fs.close();
+		  
+		System.out.println("File exported successfully");
+	}
+	
+	public static void main ( String [] args )
+	{
+		int [][] data = new int [2][2];
+		
+		for ( int i =0; i < data.length; i ++ ) 
+		{
+			for ( int j = 0 ; j < data[0].length; j ++)
+			{
+				data[i][j] = j;
+			}
+		}
+		
+		try {
+			exportFunction(data);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 }
 
