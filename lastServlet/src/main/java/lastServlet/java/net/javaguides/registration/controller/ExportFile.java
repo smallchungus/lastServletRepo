@@ -75,12 +75,10 @@ public class ExportFile {
 		  os.close();
 		  fs.close();
 		  
-		System.out.println("File exported successfully");
+		System.out.println("File exported successfully first one");
 	}
 	public static void exportFunction(int[][] data) throws FileNotFoundException, IOException, Exception {
-		
-		POIFSFileSystem fs = new POIFSFileSystem();
-		
+				
 		XSSFWorkbook wb = new XSSFWorkbook();
 		XSSFSheet sheet = wb.createSheet("Number of Orders Per Hour");
 		
@@ -119,23 +117,26 @@ public class ExportFile {
 
 		  
 		  OutputStream os = new FileOutputStream("OrdersPerHour.xlsx");
-		  fs.writeFilesystem(os);
-		  os.close();
-		  fs.close();
+		  wb.write(os);
 		  
-		System.out.println("File exported successfully");
+		  wb.close();
+		  os.close();
+
+		System.out.println("File exported successfully here");
 	}
 	
 	public static void main ( String [] args )
 	{
-		int [][] data = new int [2][2];
+		int [][] data = new int [5][2];
 		
-		for ( int i =0; i < data.length; i ++ ) 
+		for ( int i =1; i < data.length; i ++ ) 
 		{
-			for ( int j = 0 ; j < data[0].length; j ++)
+			for ( int j = 1 ; j < data[0].length; j ++)
 			{
-				data[i][j] = j;
+				data[i][j] = i * 100;
 			}
+			data[i][0] = i;
+			
 		}
 		
 		try {
