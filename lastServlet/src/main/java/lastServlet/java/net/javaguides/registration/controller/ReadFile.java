@@ -85,8 +85,7 @@ public class ReadFile {
 		}
 		finally 
 		{
-			wb.close();
-			reader.close();
+
 		}
 }
 	
