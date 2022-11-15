@@ -147,101 +147,96 @@ function getJSONData() {
                "city": "Los Angeles",
                "price": 1000
              },
-              {
+             {
                "month": "May",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 5000
-             },
-                          {
-               "month": "June",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 1400
-             },
-              {
-               "month": "July",
-               "model": "Iphone 10",
-               "city": "New York City",
-               "price": 1100
-             },
-              {
-               "month": "August",
-               "model": "Iphone 12",
-               "city": "San Francisco",
-               "price": 300
-             },
-              {
-               "month": "September",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 200
-             },
-              {
-               "month": "August",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 500
-             },
-              {
-               "month": "October",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
+               "model": "13",
+               "city": "Los Angeles",
                "price": 700
              },
-              {
-               "month": "November",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 1700
-             },
-              {
-               "month": "December",
-               "model": "12 Pro Max",
-               "city": "San Francisco",
-               "price": 1500
-             },
-             {
-               "month": "February",
-               "model": "11",
-               "city": "San Francisco",
-               "price": 800
-             },
              {
                "month": "June",
-               "model": "13 Pro",
-               "city": "San Francisco",
-               "price": 1100
-             },
-             {
-               "month": "April",
-               "model": "11 Pro",
-               "city": "San Francisco",
-               "price": 1000
-             },
-             {
-               "month": "April",
-               "model": "12 Pro",
-               "city": "San Francisco",
+               "model": "12 Pro Max",
+               "city": "Los Angeles",
                "price": 800
              },
              {
                "month": "February",
                "model": "12",
-               "city": "San Francisco",
-               "price": 500
+               "city": "Los Angeles",
+               "price": 600
              },
              {
                "month": "April",
                "model": "11 Pro",
-               "city": "San Francisco",
+               "city": "Los Angeles",
                "price": 1400
              },
              {
-               "month": "April",
-               "model": "8",
-               "city": "San Francisco",
+               "month": "May",
+               "model": "X",
+               "city": "Los Angeles",
+               "price": 1000
+             },
+             {
+               "month": "May",
+               "model": "13 Pro",
+               "city": "Los Angeles",
+               "price": 800
+             },
+             {
+               "month": "June",
+               "model": "12 Pro Max",
+               "city": "Los Angeles",
                "price": 600
              },
-             ];}
+             {
+               "month": "June",
+               "model": "11 Pro",
+               "city": "Los Angeles",
+               "price": 1400
+             },
+             {
+               "month": "March",
+               "model": "X",
+               "city": "Los Angeles",
+               "price": 1000
+             },
+             {
+               "month": "March",
+               "model": "13 Pro",
+               "city": "Los Angeles",
+               "price": 500
+             },
+             {
+               "month": "June",
+               "model": "12 Pro Max",
+               "city": "Los Angeles",
+               "price": 1400
+             },
+             {
+               "month": "January",
+               "model": "8 Plus",
+               "city": "Los Angeles",
+               "price": 600
+             },
+             {
+               "month": "June",
+               "model": "13 Pro",
+               "city": "Los Angeles",
+               "price": 1000
+             },
+             {
+               "month": "June",
+               "model": "13 Pro Max",
+               "city": "Los Angeles",
+               "price": 700
+             },
+             {
+               "month": "May",
+               "model": "13 Pro Max",
+               "city": "Los Angeles",
+               "price": 1000
+             }
+             ]
+             }
              
