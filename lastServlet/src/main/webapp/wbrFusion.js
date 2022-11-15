@@ -121,6 +121,7 @@ function createPieChart() {
     });
 }
 
+
 function getJSONData() {
     return [
              {
@@ -236,7 +237,8 @@ function getJSONData() {
                "model": "13 Pro Max",
                "city": "Los Angeles",
                "price": 1000
-             }
+             },
+             
              ]
              }
              
