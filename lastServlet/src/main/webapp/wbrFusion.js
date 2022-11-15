@@ -147,11 +147,59 @@ function getJSONData() {
                "city": "Los Angeles",
                "price": 1000
              },
+              {
+               "month": "May",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 5000
+             },
                           {
                "month": "June",
                "model": "12 Pro Max",
                "city": "San Francisco",
                "price": 1400
+             },
+              {
+               "month": "July",
+               "model": "Iphone 10",
+               "city": "New York City",
+               "price": 1100
+             },
+              {
+               "month": "August",
+               "model": "Iphone 12",
+               "city": "San Francisco",
+               "price": 300
+             },
+              {
+               "month": "September",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 200
+             },
+              {
+               "month": "August",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 500
+             },
+              {
+               "month": "October",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 700
+             },
+              {
+               "month": "November",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 1700
+             },
+              {
+               "month": "December",
+               "model": "12 Pro Max",
+               "city": "San Francisco",
+               "price": 1500
              },
              {
                "month": "February",
@@ -195,5 +243,5 @@ function getJSONData() {
                "city": "San Francisco",
                "price": 600
              },
-             ]}
+             ];}
              
