@@ -15,7 +15,7 @@
 			<h1>Login unsuccessful.</h1>
 				<%-- <form action="<%=request.getContextPath()%>/register" method="POST"> --%>
 <!-- 					<li>Email or Phone<br> <input type="text" name="username" /></li>
-					<li>Password<br> <input type="password" name="password" /><br><a href="">Forgotten account?</a></li>
+					<li>Password<br> <input type="password" name="password" /><br><a href="">Forgotten account?</a></li>a
 					<li><input type="submit" value="login" name="login" /></li>  -->
 				<!-- <li><input type="button" value="register" onclick="window.location='RegisterEmployee.jsp'"></li>  -->
 
